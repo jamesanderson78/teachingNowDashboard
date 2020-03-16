@@ -35,8 +35,8 @@
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
-                                <th>This Hour (10:00AM - 11:00AM)</th>
-                                <th>Next Hour  (11:00AM - 12:00PM)</th>
+                                <th id="thisHour"></th>
+                                <th id="nextHour"></th>
                                 <th>Current Time</th>
                                 <th>Filename Loaded</th>
                             </tr>
@@ -71,6 +71,7 @@ $(document).ready(function(){
     function loadSummary() {
         let current_datetime = new Date();
         var formatted_timestamp = current_datetime.getFullYear() + pad((current_datetime.getMonth() + 1), 2) + pad(current_datetime.getDate(), 2) + "_" + pad(current_datetime.getHours(), 2) + "00";
+        
 
         $.ajax({
             url:"data/ClassCounts.csv",
@@ -168,6 +169,11 @@ $(document).ready(function(){
         // let current_datetime = new Date();
         // let formatted_date = "top20_" + current_datetime.getFullYear() + pad((current_datetime.getMonth() + 1), 2) + pad(current_datetime.getDate(), 2) + "_" + pad(current_datetime.getHours(), 2) + "00.csv";
         // textDate.innerText = formatted_date;
+        let current_datetime = new Date();
+        var formatted_time_range = "This Hour (" + pad(current_datetime.getHours(), 2) + ":00 - " + pad(current_datetime.getHours() + 1, 2) + ":00)";
+        document.getElementById('thisHour').innerText = formatted_time_range;
+        var formatted_time_range_next = "Next Hour (" + pad(current_datetime.getHours()+1, 2) + ":00 - " + pad(current_datetime.getHours()+2 + 1, 2) + ":00)";
+        document.getElementById('nextHour').innerText = formatted_time_range_next;
     }
 
     init();

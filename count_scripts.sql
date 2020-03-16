@@ -1,4 +1,144 @@
 select
+'20200316_0000' "DAY/TIME",
+count(*) "COURSE_COUNT"
+from ps_class_tbl c,
+ps_class_mtg_pat m
+where c.crse_id = m.crse_id
+and m.mon = 'Y'
+and m.meeting_time_end >= to_timestamp('1900-1-1 0:00:00','yyyy-mm-dd hh24:mi:ss')
+and m.meeting_time_start <= to_timestamp('1900-1-1 0:59:59','yyyy-mm-dd hh24:mi:ss')
+and c.crse_offer_nbr = m.crse_offer_nbr
+and c.strm = m.strm
+and c.session_code = m.session_code 
+and c.class_section = m.class_section
+and c.class_stat = 'A'
+and m.end_dt > to_date('03/12/2020','MM/DD/YYYY')
+and m.start_dt < to_date('03/28/2020','MM/DD/YYYY')
+--m.mon, m.tues, m.wed, m.thurs, m.fri, m.sat, m.sun
+and c.strm = '2202'
+and stnd_mtg_pat <> 'TBA' -- cannot know schedule if not entered
+union -------------------------------------------------------------------
+select
+'20200316_0100' "DAY/TIME",
+count(*) "COURSE_COUNT"
+from ps_class_tbl c,
+ps_class_mtg_pat m
+where c.crse_id = m.crse_id
+and m.mon = 'Y'
+and m.meeting_time_end >= to_timestamp('1900-1-1 1:00:00','yyyy-mm-dd hh24:mi:ss')
+and m.meeting_time_start <= to_timestamp('1900-1-1 1:59:59','yyyy-mm-dd hh24:mi:ss')
+and c.crse_offer_nbr = m.crse_offer_nbr
+and c.strm = m.strm
+and c.session_code = m.session_code 
+and c.class_section = m.class_section
+and c.class_stat = 'A'
+and m.end_dt > to_date('03/12/2020','MM/DD/YYYY')
+and m.start_dt < to_date('03/28/2020','MM/DD/YYYY')
+--m.mon, m.tues, m.wed, m.thurs, m.fri, m.sat, m.sun
+and c.strm = '2202'
+and stnd_mtg_pat <> 'TBA' -- cannot know schedule if not entered
+union -------------------------------------------------------------------
+select
+'20200316_0200' "DAY/TIME",
+count(*) "COURSE_COUNT"
+from ps_class_tbl c,
+ps_class_mtg_pat m
+where c.crse_id = m.crse_id
+and m.mon = 'Y'
+and m.meeting_time_end >= to_timestamp('1900-1-1 2:00:00','yyyy-mm-dd hh24:mi:ss')
+and m.meeting_time_start <= to_timestamp('1900-1-1 2:59:59','yyyy-mm-dd hh24:mi:ss')
+and c.crse_offer_nbr = m.crse_offer_nbr
+and c.strm = m.strm
+and c.session_code = m.session_code 
+and c.class_section = m.class_section
+and c.class_stat = 'A'
+and m.end_dt > to_date('03/12/2020','MM/DD/YYYY')
+and m.start_dt < to_date('03/28/2020','MM/DD/YYYY')
+--m.mon, m.tues, m.wed, m.thurs, m.fri, m.sat, m.sun
+and c.strm = '2202'
+and stnd_mtg_pat <> 'TBA' -- cannot know schedule if not entered
+union -------------------------------------------------------------------
+select
+'20200316_0300' "DAY/TIME",
+count(*) "COURSE_COUNT"
+from ps_class_tbl c,
+ps_class_mtg_pat m
+where c.crse_id = m.crse_id
+and m.mon = 'Y'
+and m.meeting_time_end >= to_timestamp('1900-1-1 3:00:00','yyyy-mm-dd hh24:mi:ss')
+and m.meeting_time_start <= to_timestamp('1900-1-1 3:59:59','yyyy-mm-dd hh24:mi:ss')
+and c.crse_offer_nbr = m.crse_offer_nbr
+and c.strm = m.strm
+and c.session_code = m.session_code 
+and c.class_section = m.class_section
+and c.class_stat = 'A'
+and m.end_dt > to_date('03/12/2020','MM/DD/YYYY')
+and m.start_dt < to_date('03/28/2020','MM/DD/YYYY')
+--m.mon, m.tues, m.wed, m.thurs, m.fri, m.sat, m.sun
+and c.strm = '2202'
+and stnd_mtg_pat <> 'TBA' -- cannot know schedule if not entered
+union -------------------------------------------------------------------
+select
+'20200316_0400' "DAY/TIME",
+count(*) "COURSE_COUNT"
+from ps_class_tbl c,
+ps_class_mtg_pat m
+where c.crse_id = m.crse_id
+and m.mon = 'Y'
+and m.meeting_time_end >= to_timestamp('1900-1-1 4:00:00','yyyy-mm-dd hh24:mi:ss')
+and m.meeting_time_start <= to_timestamp('1900-1-1 4:59:59','yyyy-mm-dd hh24:mi:ss')
+and c.crse_offer_nbr = m.crse_offer_nbr
+and c.strm = m.strm
+and c.session_code = m.session_code 
+and c.class_section = m.class_section
+and c.class_stat = 'A'
+and m.end_dt > to_date('03/12/2020','MM/DD/YYYY')
+and m.start_dt < to_date('03/28/2020','MM/DD/YYYY')
+--m.mon, m.tues, m.wed, m.thurs, m.fri, m.sat, m.sun
+and c.strm = '2202'
+and stnd_mtg_pat <> 'TBA' -- cannot know schedule if not entered
+union -------------------------------------------------------------------
+select
+'20200316_0500' "DAY/TIME",
+count(*) "COURSE_COUNT"
+from ps_class_tbl c,
+ps_class_mtg_pat m
+where c.crse_id = m.crse_id
+and m.mon = 'Y'
+and m.meeting_time_end >= to_timestamp('1900-1-1 5:00:00','yyyy-mm-dd hh24:mi:ss')
+and m.meeting_time_start <= to_timestamp('1900-1-1 5:59:59','yyyy-mm-dd hh24:mi:ss')
+and c.crse_offer_nbr = m.crse_offer_nbr
+and c.strm = m.strm
+and c.session_code = m.session_code 
+and c.class_section = m.class_section
+and c.class_stat = 'A'
+and m.end_dt > to_date('03/12/2020','MM/DD/YYYY')
+and m.start_dt < to_date('03/28/2020','MM/DD/YYYY')
+--m.mon, m.tues, m.wed, m.thurs, m.fri, m.sat, m.sun
+and c.strm = '2202'
+and stnd_mtg_pat <> 'TBA' -- cannot know schedule if not entered
+union -------------------------------------------------------------------
+select
+'20200316_0600' "DAY/TIME",
+count(*) "COURSE_COUNT"
+from ps_class_tbl c,
+ps_class_mtg_pat m
+where c.crse_id = m.crse_id
+and m.mon = 'Y'
+and m.meeting_time_end >= to_timestamp('1900-1-1 6:00:00','yyyy-mm-dd hh24:mi:ss')
+and m.meeting_time_start <= to_timestamp('1900-1-1 6:59:59','yyyy-mm-dd hh24:mi:ss')
+and c.crse_offer_nbr = m.crse_offer_nbr
+and c.strm = m.strm
+and c.session_code = m.session_code 
+and c.class_section = m.class_section
+and c.class_stat = 'A'
+and m.end_dt > to_date('03/12/2020','MM/DD/YYYY')
+and m.start_dt < to_date('03/28/2020','MM/DD/YYYY')
+--m.mon, m.tues, m.wed, m.thurs, m.fri, m.sat, m.sun
+and c.strm = '2202'
+and stnd_mtg_pat <> 'TBA' -- cannot know schedule if not entered
+union -------------------------------------------------------------------
+select
 '20200316_0700' "DAY/TIME",
 count(*) "COURSE_COUNT"
 from ps_class_tbl c,

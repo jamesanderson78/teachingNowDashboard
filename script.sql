@@ -58,8 +58,8 @@ and c.class_stat = 'A'
 and m.end_dt > to_date('03/12/2020','MM/DD/YYYY')
 and m.start_dt < to_date('03/28/2020','MM/DD/YYYY')
 and c.strm = '2202'
-and m.mon = 'Y'
-and m.meeting_time_end >= to_timestamp('1900-1-1 21:00:00','yyyy-mm-dd hh24:mi:ss')
-and m.meeting_time_start <= to_timestamp('1900-1-1 21:59:59','yyyy-mm-dd hh24:mi:ss')
+and m.wed = 'Y'
+and m.meeting_time_end >= to_timestamp('1900-1-1 00:00:00','yyyy-mm-dd hh24:mi:ss')
+and m.meeting_time_start <= to_timestamp('1900-1-1 00:59:59','yyyy-mm-dd hh24:mi:ss')
 order by c.enrl_tot desc
 ) where rownum <= 20
