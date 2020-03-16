@@ -172,7 +172,7 @@ $(document).ready(function(){
         let current_datetime = new Date();
         var formatted_time_range = "This Hour (" + pad(current_datetime.getHours(), 2) + ":00 - " + pad(current_datetime.getHours() + 1, 2) + ":00)";
         document.getElementById('thisHour').innerText = formatted_time_range;
-        var formatted_time_range_next = "Next Hour (" + pad(current_datetime.getHours()+1, 2) + ":00 - " + pad(current_datetime.getHours()+2 + 1, 2) + ":00)";
+        var formatted_time_range_next = "Next Hour (" + pad(current_datetime.getHours()+1, 2) + ":00 - " + pad(current_datetime.getHours()+2, 2) + ":00)";
         document.getElementById('nextHour').innerText = formatted_time_range_next;
     }
 
