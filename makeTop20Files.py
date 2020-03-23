@@ -14,7 +14,7 @@ for hour in range(0, 24):
     # for every hour in the day
     hour_string = str(hour)
     zero_filled_hour = hour_string.zfill(2)
-    filename = 'data/top20_20200321_' + zero_filled_hour + '00.csv'
+    filename = 'data/top20_20200323_' + zero_filled_hour + '00.csv'
 
     sql = """
         select * from (
@@ -44,7 +44,7 @@ for hour in range(0, 24):
         and m.end_dt > to_date('03/12/2020','MM/DD/YYYY')
         and m.start_dt < to_date('03/28/2020','MM/DD/YYYY')
         and c.strm = '2202'
-        and m.sat = 'Y'
+        and m.mon = 'Y'
         and m.meeting_time_end >= to_timestamp('1900-1-1 {str1}:00:00','yyyy-mm-dd hh24:mi:ss')
         and m.meeting_time_start <= to_timestamp('1900-1-1 {str1}:59:59','yyyy-mm-dd hh24:mi:ss')
         order by c.enrl_tot desc
