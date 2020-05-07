@@ -1,2 +1,5 @@
 # Passwords
 db_conns.py
+
+# Ignore data files
+/data/*

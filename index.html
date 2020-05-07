@@ -141,8 +141,8 @@ $(document).ready(function(){
                 table_data += '</tbody></table>';
                 $('#course_table').html(table_data);
 
-                // Refresh every 5 seconds
-                setTimeout(load, 5000);
+                // Refresh every 60 seconds
+                setTimeout(load, 60000);
             }
         });
     }
@@ -152,8 +152,9 @@ $(document).ready(function(){
 
     function init() {
         updateTime();
-        window.setInterval(updateTime, 1000);
-        window.setInterval(load, 1000);
+        // Refresh every 60 seconds
+        window.setInterval(updateTime, 60000);
+        window.setInterval(load, 60000);
     }
 
     function pad(num, size) {
