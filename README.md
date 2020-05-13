@@ -3,6 +3,18 @@ Dashboard showing current classes to assist help desks with identifying classes 
  
 ## Prep
 
+Run the venv
+
 ```sh
-python -m pip install cx_Oracle --upgrade
+activate.bat
 ```
+
+Stop using the venv
+
+```sh
+deactivate.bat
+```
+
+## Deployment
+
+There is a bat file on the desktop for user 000051078 that will deploy the application from this machine.
