@@ -58,16 +58,16 @@
                 <div class="table-responsive" id="course_table">
 
                 </div>
+
+                <h2>Data Visualizations</h2>
+                <div id="myDiv"></div>
                 
                 <hr>
                 <p>This dashboard is primarily for internal IT customers. <br />For recommendations, quesions, or support about the dashboard please contact: <a href="mailto:james.anderson@sjsu.edu">James Anderson</a></p>
             </main>
         </div>
     </div>
-
-    <div id="myDiv">
-
-    </div>
+    
 
 </body>
 </html>
@@ -188,7 +188,7 @@ $(document).ready(function(){
 
 
     function makeplot() {
-        Plotly.d3.csv("data/2014_apple_stock.csv", function(data){ processData(data) } );
+        Plotly.d3.csv("data/WeeklyClassCounts.csv", function(data){ processData(data) } );
     };
 
     function processData(allRows) {
@@ -198,8 +198,8 @@ $(document).ready(function(){
 
         for (var i=0; i<allRows.length; i++) {
             row = allRows[i];
-            x.push( row['AAPL_x'] );
-            y.push( row['AAPL_y'] );
+            x.push( row['TIME'] );
+            y.push( row['COUNT'] );
         }
         console.log( 'X',x, 'Y',y, 'SD',standard_deviation );
         makePlotly( x, y, standard_deviation );
@@ -213,7 +213,7 @@ $(document).ready(function(){
         }];
 
         Plotly.newPlot('myDiv', traces,
-        {title: 'Plotting CSV data from AJAX call'});
+        {title: 'Class Counts Per Hour'});
     };
 
     makeplot();
