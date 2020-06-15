@@ -26,7 +26,7 @@ def dateString(date):
 conn = cx_Oracle.connect(user=connUsername, password=connPassword, dsn='csjprd') # if needed, place an 'r' before any parameter in order to address special characters such as '\'. For example, if your user name contains '\', you'll need to place 'r' before the user name: user=r'User Name'
 cursor = conn.cursor()
 
-startingPoint = '2020-05-11'
+startingPoint = '2020-06-01'
 weekNumber = 19
 filename = 'data/WeeklyClassCounts.csv'
 

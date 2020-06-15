@@ -25,7 +25,7 @@ filename = 'data/ClassCounts.csv'
 
 # Loop through days
 for dayInc in range(0, 30):
-    startDate = datetime.fromisoformat('2020-05-12')
+    startDate = datetime.fromisoformat('2020-06-01')
     loopDate = startDate + timedelta(days=dayInc)
     beginDate = (loopDate - timedelta(days=1)).strftime("%m/%d/%Y")
     endDate = (loopDate + timedelta(days=1)).strftime("%m/%d/%Y")
