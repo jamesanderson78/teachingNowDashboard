@@ -34,11 +34,11 @@ filename = 'data/WeeklyClassCounts.csv'
 with open(filename,'w', newline='') as out:
             # csv_out = csv.writer(out, delimiter=',')
             csv_out = csv.writer(out)
-            csv_out.writerow(["WEEK","DAY_TIME","DAY","DAY_OF_WEEK","TIME","COUNT"])
+            csv_out.writerow(["WEEK","DAY_TIME","DAY","DAY_OF_WEEK","TIME","DOW_TIME","COUNT"])
 
 
 # Loop through days
-for dayInc in range(0, 21, 1):
+for dayInc in range(0, 120, 1):
     startDate = datetime.fromisoformat(startingPoint)
     loopDate = startDate + timedelta(days=dayInc)
     if (dayInc % 7 == 0 ):
@@ -67,6 +67,7 @@ for dayInc in range(0, 21, 1):
             '{strDate}' "DAY",
             '{strDayOfWeek}' "DAY_OF_WEEK",
             '{strHour}00' "TIME",
+            '{strDayOfWeek}_{strHour}00' "DOW_TIME",
             count(*) "COURSE_COUNT"
             from ps_class_tbl c,
             ps_class_mtg_pat m
