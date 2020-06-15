@@ -24,7 +24,8 @@ cursor = conn.cursor()
 
 # Loop through days
 for dayInc in range(0, 120):
-    startDate = datetime.fromisoformat('2020-06-01')
+    # startDate = datetime.fromisoformat('2020-06-01')
+    startDate = datetime.date(datetime.now())       # today's date
     loopDate = startDate + timedelta(days=dayInc)
     beginDate = (loopDate - timedelta(days=1)).strftime("%m/%d/%Y")
     endDate = (loopDate + timedelta(days=1)).strftime("%m/%d/%Y")

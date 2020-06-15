@@ -26,7 +26,6 @@ def dateString(date):
 conn = cx_Oracle.connect(user=connUsername, password=connPassword, dsn='csjprd') # if needed, place an 'r' before any parameter in order to address special characters such as '\'. For example, if your user name contains '\', you'll need to place 'r' before the user name: user=r'User Name'
 cursor = conn.cursor()
 
-startingPoint = '2020-06-01'
 weekNumber = 19
 filename = 'data/WeeklyClassCounts.csv'
 
@@ -39,7 +38,8 @@ with open(filename,'w', newline='') as out:
 
 # Loop through days
 for dayInc in range(0, 120, 1):
-    startDate = datetime.fromisoformat(startingPoint)
+    # startDate = datetime.fromisoformat('2020-06-01')
+    startDate = datetime.date(datetime.now())       # today's date
     loopDate = startDate + timedelta(days=dayInc)
     if (dayInc % 7 == 0 ):
         weekNumber = weekNumber + 1
